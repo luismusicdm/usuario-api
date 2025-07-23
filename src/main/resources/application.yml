@@ -1,0 +1,6 @@
+spring:
+  profiles:
+    active: dev # Muda isso aqui pra 'homolog' ou 'prod' conforme o ambiente
+
+server:
+  port: 8080

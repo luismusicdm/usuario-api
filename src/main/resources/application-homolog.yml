@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/usuario_homolog
+    username: seu_usuario_homolog
+    password: sua_senha_homolog
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate # Homolog só valida pra não quebrar nada sem avisar
+    show-sql: false

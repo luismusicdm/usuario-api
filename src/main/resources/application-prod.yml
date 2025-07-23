@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/usuario_prod
+    username: seu_usuario_prod
+    password: sua_senha_prod
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate # Prod é sagrado, nada de mudanças automáticas aqui
+    show-sql: false

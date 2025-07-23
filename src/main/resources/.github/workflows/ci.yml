@@ -1,0 +1,36 @@
+name: Java CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checar código
+      uses: actions/checkout@v3
+
+    - name: Configurar Java 17
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Buildar com Maven
+      run: mvn clean package -DskipTests
+
+    - name: Testar com Maven
+      run: mvn test
+
+    - name: Construir e enviar Docker image (opcional)
+      if: github.event_name == 'push'
+      uses: docker/build-push-action@v4
+      with:
+        context: .
+        push: false
+        tags: usuarioapi:latest

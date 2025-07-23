@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/usuario_dev
+    username: seu_usuario_dev
+    password: sua_senha_dev
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update # No dev, deixa o Hibernate brincar de mestre construtor
+    show-sql: true
+    properties:
+      hibernate.format_sql: true
